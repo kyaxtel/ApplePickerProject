@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Apple : MonoBehaviour
+public class Branch : MonoBehaviour
 {
     public static float bottomY = -20f;
     private float fallSpeed = 2.0f; // Default fall speed
@@ -20,11 +20,7 @@ public class Apple : MonoBehaviour
         
         if ( transform.position.y < bottomY ) {
             Destroy( this.gameObject );
-
-            // get a reference to the ApplePicker component of Main Camera
-            ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
-            // Call the public AppleMissed() method of apScript
-            apScript.AppleMissed();
         }    
     }
 }
+
