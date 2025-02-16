@@ -79,24 +79,7 @@ public class ApplePicker : MonoBehaviour
             Destroy( tempGO );
         }
 
-        //Destroy one fo the Baskets
-        //Get the index of the last Basket in basketList
-        int basketIndex = basketList.Count -1;
-        // Get a reference to that Basket GameObject
-        GameObject basketGO = basketList[basketIndex];
-        // Remove the Basket from the list and destroy the GameObject
-        basketList.RemoveAt( basketIndex );
-        Destroy( basketGO );
-
-        // If there are no Baskets left, restart the game
-        if ( basketList.Count == 0 ) {
-            if (round < maxRounds) {
-                NextRound();
-            }
-            else {
-                SceneManager.LoadScene( "Game_Over" );
-            }
-        }
+        SceneManager.LoadScene( "Game_Over" );
     }
 
     void NextRound()
